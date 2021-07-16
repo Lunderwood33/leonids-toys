@@ -43,13 +43,26 @@ const skateboard = {
 }
 toys.push(skateboard)
 
-const toyToFind = 2
+const snowboard = {
+    name: "Snowboard",
+    maker: "Burton",
+    price: 250,
+    weight: 10
+}
+
+const addToyToInventory = (toyObject) => {
+    const lastIndex = toys.length - 1
+    const currentLastToy = toys[lastIndex]
+    const maxId = currentLastToy.id
+    const idForNewToy = maxId + 1
+
+    toyObject.id = idForNewToy
+    toys.push(toyObject)
+}
+
+addToyToInventory(snowboard)
 
 for (const toy of toys) {
+    console.log(`The ${toy.maker} ${toy.name} costs ${toy.price} dollars. It weighs ${toy.weight} grams.`)
     
-
-        if (toy.id === toyToFind) {
-
-            console.log(`The toy company, ${toy.maker}, makes a ${toy.name} that costs $${toy.price}. `)
-        }
 }
